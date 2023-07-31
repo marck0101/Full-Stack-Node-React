@@ -119,19 +119,6 @@ export default function PersistentDrawerLeft() {
           ))}
         </List>
       </Drawer> 
-      {/* <Main open={open}>
-        <div style={{margin:50}}>
-        <Breadcrumbs aria-label="breadcrumb">
-          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            Home
-          </Link>
-          <Typography color="text.primary">Dashboard</Typography>
-        </Breadcrumbs>
-        <Typography paragraph>
-          ... O conteúdo da sua página ...  
-        </Typography>
-        </div>
-      </Main> */}
     </Box>
   );
 }
