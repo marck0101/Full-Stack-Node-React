@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
+// eslint-disable-next-line
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
@@ -76,7 +78,7 @@ export default function PersistentDrawerLeft() {
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            sx={{ mr: 1, ...(open && { display: "none"}) }}
+            sx={{ mr: 1, ...(open && { display: "none" }) }}
           >
             <MenuIcon />
           </IconButton>
@@ -118,7 +120,7 @@ export default function PersistentDrawerLeft() {
             </ListItem>
           ))}
         </List>
-      </Drawer> 
+      </Drawer>
     </Box>
   );
 }

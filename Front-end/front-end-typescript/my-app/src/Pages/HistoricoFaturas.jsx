@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // HistoricoFaturas.jsx
 import React, { useState, useEffect } from "react";
 import Chart from "../Components/Chart"; // Verifique o caminho correto aqui
@@ -38,12 +39,6 @@ const HistoricoFaturas = () => {
     // Simulação de chamada à API para obter os dados das faturas (remova na implementação real com uma API real)
     // Neste exemplo, estamos usando dados fake diretamente no componente
     setInvoices(fakeInvoices);
-  }, []); // Remova fakeInvoices do array de dependências, pois não precisa estar aqui
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    // Faça algo com fakeInvoices, por exemplo, console.log(fakeInvoices);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
