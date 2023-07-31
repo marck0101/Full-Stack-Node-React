@@ -83,7 +83,7 @@ export default function PersistentDrawerLeft() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+            Dash Energi
           </Typography>
         </Toolbar>
       </AppBar>
