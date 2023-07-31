@@ -1,0 +1,139 @@
+// Aqui está o meu historicoFaturas:
+// import React, { useState, useEffect } from "react";
+// import { getInvoicesFromDatabase } from "../api/api"; // Check the relative path here
+// import Chart from "../Components/Chart"; // Check the relative path here
+
+// const HistoricoFaturas = () => {
+//   const [invoices, setInvoices] = useState([]);
+
+//   useEffect(() => {
+//     // Função para buscar as faturas da fake API
+//     const fetchInvoices = async () => {
+//       try {
+//         const data = await getInvoicesFromDatabase(); // Chamando a função para obter os dados fictícios das faturas
+//         setInvoices(data);
+//       } catch (error) {
+//         console.error("Erro ao buscar as faturas:", error);
+//       }
+//     };
+
+//     fetchInvoices();
+//   }, []);
+
+//   return (
+//     <>
+//       <div style={{ marginTop: 60, marginLeft: 20 }}>
+//         <h1>Historico Faturas</h1>
+//         <Chart invoices={invoices} />
+//       </div>
+//     </>
+//   );
+// };
+
+// export default HistoricoFaturas;
+
+
+
+// Aqui o chart
+// import React from "react";
+// import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+
+// const Chart = ({ invoices }) => {
+//   return (
+//     <ResponsiveContainer width="95%" height={300}>
+//       <BarChart data={invoices}>
+//         <CartesianGrid strokeDasharray="3 3" />
+//         <XAxis dataKey="invoiceNumber" />
+//         <YAxis />
+//         <Tooltip />
+//         <Legend />
+//         <Bar dataKey="amount" fill="#8884d8" />
+//       </BarChart>
+//     </ResponsiveContainer>
+//   );
+// };
+
+// export default Chart;
+
+
+
+// Aqui o componente api.js
+// // api.js
+
+// const fakeInvoices = [
+//     {
+//       id: 1,
+//       invoiceNumber: "INV-001",
+//       issueDate: "2023-07-15",
+//       dueDate: "2023-07-30",
+//       amount: 100.0,
+//       status: "Paid",
+//     },
+//     {
+//       id: 2,
+//       invoiceNumber: "INV-002",
+//       issueDate: "2023-06-28",
+//       dueDate: "2023-07-28",
+//       amount: 75.5,
+//       status: "Paid",
+//     },
+//     {
+//       id: 3,
+//       invoiceNumber: "INV-003",
+//       issueDate: "2023-06-15",
+//       dueDate: "2023-07-15",
+//       amount: 200.0,
+//       status: "Unpaid",
+//     },
+//     // Add more invoice objects here to create additional fake data
+//   ];
+  
+//   // Function to get all invoices
+//   export const getInvoicesFromDatabase = () => {
+//     // Simulate API call delay with setTimeout (remove in production)
+//     return new Promise((resolve) => {
+//       setTimeout(() => {
+//         resolve(fakeInvoices);
+//       }, 500);
+//     });
+//   };
+  
+
+// Routers
+// import React from "react";
+// import { Route, Routes } from "react-router-dom";
+// import PersistentDrawerLeft from "../Components/PersistentDrawerLeft";
+// import Dashboard from "../Pages/Dashboard";
+// import HistoricoFaturas from "../Pages/HistoricoFaturas";
+// // import Home from "../Pages/Home";
+// // import ComponenteControlador from "../Pages/ComponenteControlador";
+
+// function RoutesApp() {
+//   return (
+//     <>
+//       <PersistentDrawerLeft />
+//       <Routes>
+//         {/* <Route exact path="/" element={<ComponenteControlador />} /> */}
+//         {/* <Route exact path="/" element={<Home />} /> */}
+//         <Route exact path="/dashboard" element={<Dashboard />} />
+//         <Route exact path="/HistoricoFatura" element={<HistoricoFaturas />} />
+
+//       </Routes>
+//     </>
+//   );
+// }
+
+// export default RoutesApp;
+
+// aqui o ComponenteControlador
+// import React from "react";
+// import PersistentDrawerLeft from "../Components/PersistentDrawerLeft";
+
+// const ComponenteControlador = () => {
+//     return (
+//         <>
+//             <PersistentDrawerLeft />
+//         </>
+//     )
+// }
+// export default ComponenteControlador;
