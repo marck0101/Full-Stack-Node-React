@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-// HistoricoFaturas.jsx
 import React, { useState, useEffect } from "react";
-import Chart from "../Components/Chart"; // Verifique o caminho correto aqui
+import Chart from "../Components/Chart"; 
 
 const HistoricoFaturas = () => {
   // Dados fake das faturas
@@ -30,14 +29,12 @@ const HistoricoFaturas = () => {
       amount: 200.0,
       status: "Unpaid",
     },
-    // Adicione mais objetos aqui para criar mais dados fictícios de faturas
   ];
 
   const [invoices, setInvoices] = useState([]);
 
   useEffect(() => {
     // Simulação de chamada à API para obter os dados das faturas (remova na implementação real com uma API real)
-    // Neste exemplo, estamos usando dados fake diretamente no componente
     setInvoices(fakeInvoices);
   }, []);
 

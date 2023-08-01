@@ -27,11 +27,9 @@ const Home = () => {
     ]
     return (
         <>
-            {/* <Grid container>
-                <Grid item xs={12}> */}
-                    <Dashboard Teste={info} />
-                {/* </Grid>
-            </Grid> */}
+
+            <Dashboard Teste={info} />
+
         </>
     )
 }
