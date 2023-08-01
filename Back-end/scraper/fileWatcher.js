@@ -1,7 +1,6 @@
 const fs = require('fs');
 const { exec } = require('child_process');
 
-// Pasta onde estão os arquivos de faturas
 const pastaFaturas = './faturas';
 
 // Função para executar o scraper no novo arquivo adicionado
