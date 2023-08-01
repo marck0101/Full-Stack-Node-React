@@ -1,4 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+// /* eslint-disable no-unused-vars */
+// /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -28,24 +30,23 @@ const drawerWidth = 240;
 
 const AppBar = MuiAppBar;
 
-// const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
-//   ({ theme, open }) => ({
-//     flexGrow: 1,
-//     padding: theme.spacing(3),
-//     transition: theme.transitions.create("margin", {
-//       easing: theme.transitions.easing.sharp,
-//       duration: theme.transitions.duration.leavingScreen,
-//     }),
-//     marginLeft: `-${drawerWidth}px`, 
-//     ...(open && {
-//       transition: theme.transitions.create("margin", {
-//         easing: theme.transitions.easing.easeOut,
-//         duration: theme.transitions.duration.enteringScreen,
-//       }),
-//       marginLeft: 0,
-//     }),
-//   })
-// );
+const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
+  ({ theme, open }) => ({
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    ...(open && {
+      transition: theme.transitions.create("margin", {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+      marginLeft: 0,
+    }),
+  })
+);
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -108,7 +109,7 @@ export default function PersistentDrawerLeft() {
         <Divider />
         <List>
           {[
-            { text: "Dashboard", icon: <MailIcon />, to: "/Dashboard" },
+            { text: "Dashboard", icon: <MailIcon />, to: "/" },
             { text: "Histórico de faturas", icon: <InboxIcon />, to: "/HistoricoFaturas" },
 
           ].map((item) => (
@@ -124,3 +125,131 @@ export default function PersistentDrawerLeft() {
     </Box>
   );
 }
+
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import { makeStyles } from "@mui/material/styles";
+// import Drawer from "@mui/material/Drawer";
+// import AppBar from "@mui/material/AppBar";
+// import Toolbar from "@mui/material/Toolbar";
+// import List from "@mui/material/List";
+// import Typography from "@mui/material/Typography";
+// import Divider from "@mui/material/Divider";
+// import IconButton from "@mui/material/IconButton";
+// import MenuIcon from "@mui/icons-material/Menu";
+// import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+// import ListItem from "@mui/material/ListItem";
+// import ListItemButton from "@mui/material/ListItemButton";
+// import ListItemIcon from "@mui/material/ListItemIcon";
+// import ListItemText from "@mui/material/ListItemText";
+// import InboxIcon from "@mui/icons-material/MoveToInbox";
+// import MailIcon from "@mui/icons-material/Mail";
+
+// const drawerWidth = 240;
+
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     display: "flex",
+//   },
+//   appBar: {
+//     zIndex: theme.zIndex.drawer + 1,
+//   },
+//   menuButton: {
+//     marginRight: theme.spacing(2),
+//   },
+//   drawer: {
+//     width: drawerWidth,
+//     flexShrink: 0,
+//   },
+//   drawerPaper: {
+//     width: drawerWidth,
+//   },
+//   drawerHeader: {
+//     display: "flex",
+//     alignItems: "center",
+//     padding: theme.spacing(0, 1),
+//     ...theme.mixins.toolbar,
+//     justifyContent: "flex-end",
+//   },
+//   content: {
+//     flexGrow: 1,
+//     padding: theme.spacing(3),
+//     transition: theme.transitions.create("margin", {
+//       easing: theme.transitions.easing.sharp,
+//       duration: theme.transitions.duration.leavingScreen,
+//     }),
+//     marginLeft: -drawerWidth,
+//   },
+//   contentShift: {
+//     transition: theme.transitions.create("margin", {
+//       easing: theme.transitions.easing.easeOut,
+//       duration: theme.transitions.duration.enteringScreen,
+//     }),
+//     marginLeft: 0,
+//   },
+// }));
+
+// function PersistentDrawerLeft() {
+//   const classes = useStyles();
+//   const [open, setOpen] = React.useState(false);
+
+//   const handleDrawerOpen = () => {
+//     setOpen(true);
+//   };
+
+//   const handleDrawerClose = () => {
+//     setOpen(false);
+//   };
+
+//   return (
+//     <div className={classes.root}>
+//       <AppBar position="fixed" className={classes.appBar}>
+//         <Toolbar>
+//           <IconButton
+//             color="inherit"
+//             aria-label="open drawer"
+//             onClick={handleDrawerOpen}
+//             edge="start"
+//             className={classes.menuButton}
+//           >
+//             <MenuIcon />
+//           </IconButton>
+//           <Typography variant="h6" noWrap>
+//             Dash Energi
+//           </Typography>
+//         </Toolbar>
+//       </AppBar>
+//       <Drawer
+//         className={classes.drawer}
+//         variant="persistent"
+//         anchor="left"
+//         open={open}
+//         classes={{
+//           paper: classes.drawerPaper,
+//         }}
+//       >
+//         <div className={classes.drawerHeader}>
+//           <IconButton onClick={handleDrawerClose}>
+//             <ChevronLeftIcon />
+//           </IconButton>
+//         </div>
+//         <Divider />
+//         <List>
+//           {[
+//             { text: "Dashboard", icon: <MailIcon />, to: "/" },
+//             { text: "Histórico de faturas", icon: <InboxIcon />, to: "/HistoricoFaturas" },
+//           ].map((item) => (
+//             <ListItem key={item.text} disablePadding>
+//               <ListItemButton component={Link} to={item.to}>
+//                 <ListItemIcon>{item.icon}</ListItemIcon>
+//                 <ListItemText primary={item.text} />
+//               </ListItemButton>
+//             </ListItem>
+//           ))}
+//         </List>
+//       </Drawer>
+//     </div>
+//   );
+// }
+
+// export default PersistentDrawerLeft;

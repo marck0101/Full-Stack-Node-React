@@ -44,7 +44,7 @@ const HistoricoFaturas = () => {
   return (
     <>
       <div style={{ marginTop: 60, marginLeft: 20 }}>
-        <h1>Historico Faturas</h1>
+        <h3>Historico Faturas</h3>
         <Chart invoices={invoices} />
       </div>
     </>

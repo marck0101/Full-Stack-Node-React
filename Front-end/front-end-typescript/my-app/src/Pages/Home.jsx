@@ -1,12 +1,37 @@
+// import { Grid } from "@mui/material"
+import Dashboard from "./Dashboard"
+
 const Home = () => {
+    const info = [{
+        id: 1,
+        nCliente: 1010,
+        mesReferencia: '01/01/2020',
+        dataVencimento: '01/01/2020',
+        energiaEletrica: {
+            kWh: "100",
+            valorUnit: "5",
+            valorRS: "500"
+        },
+        enCompICMS: {
+            kWh: "100",
+            valorUnit: "5",
+            valorRS: "500"
+        },
+        contPubMun: {
+            valorRS: "50"
+        },
+        valorTotal: {
+            valorRS: "1000"
+        },
+    },
+    ]
     return (
         <>
-            <div style={{ marginTop: 60, marginLeft: 20 }}>
-                <h1>teste</h1>
-                <h1>Home aqui</h1>
-
-
-            </div>
+            {/* <Grid container>
+                <Grid item xs={12}> */}
+                    <Dashboard Teste={info} />
+                {/* </Grid>
+            </Grid> */}
         </>
     )
 }
