@@ -2,7 +2,7 @@ const express = require("express");
 const { Pool } = require("pg");
 
 const app = express();
-const port = 3000; // Escolha a porta que deseja utilizar para a API
+const port = 3333; 
 
 // Configuração do banco de dados
 const pool = new Pool({
@@ -19,7 +19,7 @@ app.use(express.json());
 // Rota para receber os dados da aplicação Node.js
 app.post("/dados-fatura", async (req, res) => {
   try {
-    // Aqui você pode acessar os dados enviados pela aplicação Node.js através de req.body
+    // Aqui pode acessar os dados enviados pela aplicação Node.js através de req.body
     const dadosFatura = req.body;
 
     // Preparar os dados para inserção no banco de dados (exemplo)
