@@ -1,7 +1,7 @@
 const { exec } = require('child_process');
 
 const runScraper = 'node scraper/scraper.js';
-const runFileWatcher = 'node scraper/fileWatcher.js'; // Ajuste do caminho para o fileWatcher.js
+const runFileWatcher = 'node scraper/fileWatcher.js'; 
 
 exec(runScraper, (err, stdout, stderr) => {
   if (err) {
